@@ -1,0 +1,94 @@
+<html>
+<head>
+<title>Tor Metrics: Relays by version</title>
+<link href="metrics.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<h1>Tor Metrics: Relays by version</h1>
+
+<p>
+<a href="index.html">Home</a> |
+<a href="clients.html">Clients</a>
+<a href="relays.html">Relays</a>
+<a href="bridges.html">Bridges</a>
+<a href="pluggable-transports.html">Pluggable Transports</a>
+<a href="hidden-services.html">Hidden Services</a> |
+<a href="bandwidth.html">Bandwidth</a>
+<a href="performance.html">Performance</a>
+<a href="diversity.html">Diversity</a> |
+<a href="about.html">About</a>
+</p>
+
+<img src="some-graph.png" width="576" height="360" />
+
+<form action="some-graph.html">
+<p>
+<label>Start date (yyyy-mm-dd):</label>
+<input type="text" name="start" size="10">
+<label>End date (yyyy-mm-dd):</label>
+<input type="text" name="end" size="10">
+</p>
+<p>
+<input class="submit" type="submit" value="Download as PNG">
+<input class="submit" type="submit" value="Download as PDF">
+<input class="submit" type="submit" value="Download as SVG">
+<input class="submit" type="submit" value="Update graph">
+</p>
+</form>
+
+<h2>Metadata</h2>
+
+<table>
+<tr><td>Description:</td><td>Relays report the Tor version that they are
+running to the directory authorities.
+See the
+<a href="https://www.torproject.org/download/download.html.en">download
+page</a> and
+<a href="https://gitweb.torproject.org/tor.git/blob/HEAD:/ChangeLog">ChangeLog file</a>
+to find out which Tor versions are stable and unstable.
+This graph shows the number of relays by version.</td></tr>
+<tr><td>Author:</td><td>The Tor Project, Inc.</td></tr>
+<tr><td>License:</td><td><a href="http://creativecommons.org/licenses/by/3.0/us/">Creative Commons Attribution 3.0 United States</a></td></tr>
+<tr><td>Data:</td><td><a href="some-data.html">Number of relays and bridges</a></td></tr>
+</table>
+
+<h2>Related graphs</h2>
+
+<ul>
+<li><a href="some-graph.html">Relays with Exit, Fast, Guard, Stable, and HSDir flags</a></li>
+<li><a href="some-graph.html">Relays by platform</a></li>
+</ul>
+
+<center><small>
+<p>This material is supported in part by the National Science
+Foundation under Grant No. CNS-0959138. Any opinions,
+finding, and conclusions or recommendations expressed in this
+material are those of the author(s) and do not necessarily reflect
+the views of the National Science Foundation.</p>
+<p>"Tor" and the "Onion Logo" are <a href="https://www.torproject.org/docs/trade
+mark-faq.html.en">registered trademarks</a> of The Tor Project, Inc.</p>
+<p>Data on this site is freely available under a
+<a href="http://creativecommons.org/publicdomain/zero/1.0/">CC0 no
+copyright declaration</a>: To the extent possible under law, the Tor
+Project has waived all copyright and related or neighboring rights
+in the data. Graphs are licensed under a
+<a href="http://creativecommons.org/licenses/by/3.0/us/">Creative
+Commons Attribution 3.0 United States License</a>.</p>
+</small></center>
+
+<hr/>
+
+<p><font color="grey">
+Design prototype note:
+There are currently four types of metrics pages: graph, table, data, link.
+Each graph page shows exactly one graph and optionally provides controls
+to customize that graph.
+In most cases the graph will be produced by the server and provided as
+image, but in some cases the graph will be produced on the client using
+JavaScript.
+Adding new graph pages should be easy.
+</font></p>
+</body>
+
+</html>
+

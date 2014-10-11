@@ -1,0 +1,173 @@
+<html>
+<head>
+<title>Tor Metrics</title>
+<link href="metrics.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<h1>Tor Metrics</h1>
+
+<p>
+<a href="index.html">Home</a> |
+<a href="clients.html">Clients</a>
+<a href="relays.html">Relays</a>
+<a href="bridges.html">Bridges</a>
+<a href="pluggable-transports.html">Pluggable Transports</a>
+<a href="hidden-services.html">Hidden Services</a> |
+<a href="bandwidth.html">Bandwidth</a>
+<a href="performance.html">Performance</a>
+<a href="diversity.html">Diversity</a> |
+<a href="about.html">About</a>
+</p>
+
+<center>
+<strong>
+<p>Welcome to Tor Metrics, the primary place to learn interesting
+facts about the Tor network, the largest deployed anonymity network to
+date.
+</p>
+<p>
+If something can be measured safely, you'll find it here.
+And if you can think of something that is missing, please help us add it
+here!</p>
+</strong>
+
+<img src="metrics-logo.png" height="360" />
+
+<br/>
+<br/>
+
+<table><tr><td width="33%" style="vertical-align:top">
+<p><strong>How can something be measured safely in an anonymity
+network?</strong></p>
+<p>We wrote a
+<a href="http://freehaven.net/anonbib/#wecsr10measuring-tor">research
+paper</a> where we describe how we measure potentially sensitive data in
+the Tor network.
+Whenever we want to measure new data, there is a rigorous process of
+writing a
+<a href="https://gitweb.torproject.org/torspec.git/blob/HEAD:/proposals/001-process.txt">proposal
+document</a>, discussing it on the
+<a href="https://lists.torproject.org/cgi-bin/mailman/listinfo/tor-dev">development
+list</a>, and asking for code review on the
+<a href="https://trac.torproject.org/projects/tor">bug tracker</a>.
+As a core principle, we only use data for metrics that have
+been made publicly available.
+<a href="about.html">Learn more...</a>
+</td><td width="33%" style="vertical-align:top">
+<p><strong>How can I contribute?</strong></p>
+<p>Depends on what you'd like to contribute.
+We welcome contributions ranging from links to interesting visualizations
+over data sets from your experiments or analyses
+to code patches that add new graphs, tables, or data-processing scripts.
+But be sure to read up the details before preparing your contribution.
+<a href="about.html">Learn more...</a>
+</td><td width="33%" style="vertical-align:top">
+<p><strong>So, what's here to see?</strong></p>
+<p>Oh, you're still on this page?
+Please use the navigation bar to go the metrics you're interested in.
+If you don't know where to start, you might want to begin with the
+<a href="clients.html">clients section</a>.
+Enjoy your stay!</p>
+</td></tr></table>
+</center>
+
+<center><small>
+<p>This material is supported in part by the National Science
+Foundation under Grant No. CNS-0959138. Any opinions,
+finding, and conclusions or recommendations expressed in this
+material are those of the author(s) and do not necessarily reflect
+the views of the National Science Foundation.</p>
+<p>"Tor" and the "Onion Logo" are <a href="https://www.torproject.org/docs/trademark-faq.html.en">registered trademarks</a> of The Tor Project, Inc.</p>
+<p>Data on this site is freely available under a
+<a href="http://creativecommons.org/publicdomain/zero/1.0/">CC0 no
+copyright declaration</a>: To the extent possible under law, the Tor
+Project has waived all copyright and related or neighboring rights
+in the data. Graphs are licensed under a
+<a href="http://creativecommons.org/licenses/by/3.0/us/">Creative
+Commons Attribution 3.0 United States License</a>.</p>
+</small></center>
+
+<hr/>
+
+<font color="grey">
+<p>
+General ideas for this design prototype:
+<ol>
+<li>Becoming more open to contributions: It should be as easy as possible
+to add new metrics, in particular without having to think about potential
+design issues like extending the site navigation.</li>
+<li>Being less strict about categorizing metrics: Most metrics shall be
+found unter two or more categories, so that categories don't have to be
+chosen under the aspect of cleanly subdiving metrics into distinct subsets but
+into aspects or perspectives of the network that people might care about.</li>
+<li>Moving every graph or table to its own page: There shall be
+standardized pages for graphs, tables, or other metrics that are easier to
+comprehend and to link to than long pages containing half a dozen graphs.
+With the current graphs and tables, there would be 23 such pages, but that number
+could easily grow to 50 in the future.</li>
+<li>Adding new pages for raw data: Most graphs and tables currently
+contain a link to a CSV file containing raw data.
+The data format is described in a text file contained in the Git
+repository.
+The better approach would be to create a new page for each CSV file
+produced by Tor Metrics and include the data format on that page.
+This would be the third page type: "data".
+There would be 6 such pages right now.</li>
+<li>Adding reports as new pages: we should add technical reports and
+research papers on their own pages.
+Criteria for adding papers or reports could be that they are
+either using Tor network data or are tightly related to their collection
+or usage.</li>
+<li>Adding links: we should be able to add
+visualizations created by other people in the community, but without
+forcing them to write code for Tor Metrics and without us committing
+to maintain their code. We should be able to add links to these visualizations as
+new pages, too.
+This would be the fourth page type: "link".</li>
+<li>Adding one-off experiments and analyses: we sometimes run one-off
+experiments or analyses, but don't intend to keep the data-processing
+scripts running or make visualizations customizable. Still, these results
+can be quite useful for others. We should be able to add new pages
+for these experiments and analyses.
+We could add new metrics page types "experiment" and "analysis" in addition to
+"graph", "table", "data", and "link".</li>
+</ol>
+</p>
+
+<p>
+Tooltip texts for navigation entries:
+<ul>
+<li>Clients:
+How many clients connect to the network every day, where do they come
+from, and what transports are they using?</li>
+<li>Relays:
+How many relays contribute their resources to the network, and how many
+of them permit exiting to the Internet?</li>
+<li>Bridges:
+How many bridges exist to help censored users to connect to the
+network?</li>
+<li>Pluggable Transports:
+How many people use pluggable transports to overcome their
+heavily censored Internet connection?</li>
+<li>Hidden Services:
+How many relays participate in the distributed directory that hidden
+services use to announce themselves?</li>
+<li>Bandwidth:
+How much bandwidth do relays advertise, and how much of that is
+actually consumed?</li>
+<li>Performance:
+How long does it take to download a megabyte of data over Tor, and how
+about five?</li>
+<li>Diversity:
+How diverse is the network in terms of countries or autonomous
+systems?</li>
+<li>About:
+How are all these facts obtained in an anonymity network without
+hurting user privacy?</li>
+</ul>
+</p>
+</font>
+
+</body>
+</html>
+
